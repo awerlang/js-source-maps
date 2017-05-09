@@ -1,0 +1,19 @@
+<h1>
+  JavaScript Source Map Tools
+</h1>
+
+<form class="pure-form pure-form-stacked">
+  <p>Use this option to upload both JS and MAP files.</p>
+  <div><label>Upload</label></div>
+  <input #sourceFiles name="sourceFiles" type="file" multiple>
+
+  <div><label>Stack trace</label></div>
+  <textarea name="stackTrace" [(ngModel)]="stackTrace" cols="100" rows="8"></textarea>
+
+  <button class="pure-button pure-button-primary" (click)="transform()">Transform</button>
+</form>
+
+<div *ngIf="transformed">
+  <h2>Result</h2>
+  <pre class="code"><code>{{transformed}}</code></pre>
+</div>
